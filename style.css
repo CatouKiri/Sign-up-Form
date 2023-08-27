@@ -1,0 +1,55 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'League Gothic', sans-serif;
+}
+
+main {
+    display: flex;
+}
+
+.logo-container {
+    background-image: url(./images/pexels-swapnil-sharma-5875951.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40vw;
+    height: 100vh;
+}
+
+.header-container {
+    margin-top: 20vh;
+    width: 80%;
+    height: 20%;
+    background-color: rgba(0, 0, 195, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: white;
+    font-size: 5em;
+}
+
+.yamaha-motto {
+    color: white;
+    font-size: 2em;
+}
+
+.photographer {
+    position: absolute;
+    bottom: 10px;
+    margin-left: 10px;
+    color: white;
+    font-size: 1.3em;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
