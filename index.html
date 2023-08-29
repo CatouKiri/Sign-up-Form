@@ -29,22 +29,34 @@
             <form action="#" method="get">
                 <h2>Let's do this!</h2>
                 <div class="input-container">
-                <label for="first-name" class="item">FIRST NAME
-                    <input type="text" name="first-name" id="first-name"></label>
-                <label for="last-name" class="item">LAST NAME
-                    <input type="text" name="last-name" id="last-name"></label>
-                <label for="email" class="item">EMAIL
-                    <input type="email" name="email" id="email"></label>
-                <label for="phone-number" class="item">PHONE NUMBER
-                    <input type="number" name="phone-number" id="phone-number"></label>
-                <label for="password" class="item">PASSWORD
-                    <input type="password" name="password" id="password"></label>
-                <label for="confirm-password" class="item">CONFIRM PASSWORD
-                    <input type="password" name="confirm-password" id="confirm-password"></label>
+                    <label for="first-name" class="item">FIRST NAME
+                        <input type="text" name="first-name" id="first-name" placeholder="John" required>
+                        <div id="first-name-error" class="error"></div>
+                    </label>
+                    <label for="last-name" class="item">LAST NAME
+                        <input type="text" name="last-name" id="last-name" placeholder="Doe" required>
+                        <div id="last-name-error" class="error"></div>
+                    </label>
+                    <label for="email" class="item">EMAIL
+                        <input type="email" name="email" id="email" placeholder="johndoe@gmail.com" required>
+                        <div id="email-error" class="error"></div>
+                    </label>
+                    <label for="phone-number" class="item">PHONE NUMBER
+                        <input type="tel" pattern="[0-9]{10}" name="phone-number" id="phone-number" placeholder="09123456789" required>
+                        <div id="phone-number-error" class="error"></div>
+                    </label>
+                    <label for="password" class="item">PASSWORD
+                        <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                        <div id="password-error" class="error"></div>
+                    </label>
+                    <label for="confirm-password" class="item">CONFIRM PASSWORD
+                        <input type="password" name="confirm-password" id="confirm-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                        <div id="confirm-password-error" class="error"></div>
+                    </label>
                 </div>
                 <button type="submit">Create Account</button>
             </form>
-            <p>Already have an account? <a href="#">Log in</a></p>
+            <p>Already have an account? <a class="log-in" href="#"><b>Log in</b></a></p>
         </div>
     </main>
 </body>
