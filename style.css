@@ -74,6 +74,7 @@ h1 {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 input:hover {
@@ -128,6 +129,18 @@ form {
     margin-top: 30px;
 }
 
+label {
+    position: relative;
+}
+
 .log-in {
     color: blue;
+}
+
+.error {
+    color: rgb(255, 39, 39);
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    font-size: 1em;
 }

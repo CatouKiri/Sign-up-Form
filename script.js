@@ -1,12 +1,88 @@
-const firstName = document.getElementById('first-name');
-const lastName = document.getElementById('last-name');
-const email = document.getElementById('email');
-const phoneNumber = document.getElementById('phone-number');
-const password = document.getElementById('password');
-const confirmPassword = document.getElementById('confirm-password');
-const firstNameError = document.getElementById('first-name-error');
-const lastNameError = document.getElementById('last-name-error');
-const emailError = document.getElementById('email-error');
-const phoneNumberError = document.getElementById('phone-number-error');
-const passwordError = document.getElementById('password-error');
-const confirmPasswordError = document.getElementById('confirm-password-error');
+const firstName = document.querySelector('#first-name');
+const lastName = document.querySelector('#last-name');
+const email = document.querySelector('#email');
+const phoneNumber = document.querySelector('#phone-number');
+const password = document.querySelector('#password');
+const confirmPassword = document.querySelector('#confirm-password');
+const firstNameError = document.querySelector('#first-name-error');
+const lastNameError = document.querySelector('#last-name-error');
+const emailError = document.querySelector('#email-error');
+const phoneNumberError = document.querySelector('#phone-number-error');
+const passwordError = document.querySelector('#password-error');
+const confirmPasswordError = document.querySelector('#confirm-password-error');
+
+// firstName.addEventListener("input", function (event) {
+//     if (firstName.value === '') {
+//         firstNameError.textContent = 'Please type in your first name.';
+//     } else {
+//         firstNameError.textContent = '';
+//     }
+// });
+
+// lastName.addEventListener("input", function (event) {
+//     if (lastName.value === '') {
+//         lastNameError.textContent = 'Please type in your last name.';
+//     } else {
+//         lastNameError.textContent = '';
+//     }
+// });
+
+
+// email.addEventListener("input", function (event) {
+//     if (email.validity.typeMismatch) {
+//         emailError.textContent = 'Please enter in a valid Email. ex(johndoe@email.com)';
+//     } else {
+//         emailError.textContent = '';
+//     }
+// });
+
+// phoneNumber.addEventListener("input", function (event) {
+//     if (phoneNumber.validity.patternMismatch) {
+//         phoneNumberError.textContent = 'Please enter in a 10 digit phone number that starts with 09';
+//     } else {
+//         phoneNumber.textContent = '';
+//     }
+// });
+
+// password.addEventListener("input", function (event) {
+//     if (password.validity.patternMismatch){
+//       const currentValue = password.value;
+//       const regExpCap = /[A-Z]/g;
+//       const regExpDig = /[0-9]/g;
+//       let result = '';
+//       if (regExpCap.test(currentValue)){
+//         result += '';
+//       } else {
+//         result += `Missing at least 1 capital letter. `;
+//         result += '\n';
+//       }
+
+
+//       if (regExpDig.test(currentValue)){
+//         result += '';
+//       } else {
+//         result += 'Missing at least 1 number. ';
+//         result += '\n';
+//       }
+
+//       if (currentValue.length < 9){
+//         result += 'Password must be at least 8 characters. '
+//         result += '\n';
+//       } else {
+//         result += '';
+//       }
+
+//       passwordError.textContent = result;
+
+//     } else {
+//       passwordError.textContent = '';
+//     }
+//   });
+
+  confirmPassword.addEventListener("input", function (event) {
+    if (confirmPassword.value !== password.value) {
+      confirmPasswordError.textContent = 'Passwords do not match';
+    } else {
+      confirmPasswordError.textContent = '';
+    }
+  });
