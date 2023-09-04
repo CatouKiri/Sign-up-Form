@@ -11,73 +11,96 @@ const phoneNumberError = document.querySelector('#phone-number-error');
 const passwordError = document.querySelector('#password-error');
 const confirmPasswordError = document.querySelector('#confirm-password-error');
 
-// firstName.addEventListener("input", function (event) {
-//     if (firstName.value === '') {
-//         firstNameError.textContent = 'Please type in your first name.';
-//     } else {
-//         firstNameError.textContent = '';
-//     }
-// });
+firstName.addEventListener("input", function (event) {
+    if (firstName.value === '') {
+        firstNameError.textContent = '*Please enter in your first name.';
+    } else {
+        firstNameError.textContent = '';
+    }
+});
 
-// lastName.addEventListener("input", function (event) {
-//     if (lastName.value === '') {
-//         lastNameError.textContent = 'Please type in your last name.';
-//     } else {
-//         lastNameError.textContent = '';
-//     }
-// });
-
-
-// email.addEventListener("input", function (event) {
-//     if (email.validity.typeMismatch) {
-//         emailError.textContent = 'Please enter in a valid Email. ex(johndoe@email.com)';
-//     } else {
-//         emailError.textContent = '';
-//     }
-// });
-
-// phoneNumber.addEventListener("input", function (event) {
-//     if (phoneNumber.validity.patternMismatch) {
-//         phoneNumberError.textContent = 'Please enter in a 10 digit phone number that starts with 09';
-//     } else {
-//         phoneNumber.textContent = '';
-//     }
-// });
-
-// password.addEventListener("input", function (event) {
-//     if (password.validity.patternMismatch){
-//       const currentValue = password.value;
-//       const regExpCap = /[A-Z]/g;
-//       const regExpDig = /[0-9]/g;
-//       let result = '';
-//       if (regExpCap.test(currentValue)){
-//         result += '';
-//       } else {
-//         result += `Missing at least 1 capital letter. `;
-//         result += '\n';
-//       }
+lastName.addEventListener("input", function (event) {
+    if (lastName.value === '') {
+        lastNameError.textContent = '*Please enter in your last name.';
+    } else {
+        lastNameError.textContent = '';
+    }
+});
 
 
-//       if (regExpDig.test(currentValue)){
-//         result += '';
-//       } else {
-//         result += 'Missing at least 1 number. ';
-//         result += '\n';
-//       }
+email.addEventListener("input", function (event) {
+    if (email.value === '') {
+        emailError.textContent = '*Please enter in your email address. ex(johndoe@email.com)';
+    }
+    else if (email.validity.typeMismatch) {
+        emailError.textContent = '*Please enter in a valid email. ex(johndoe@email.com)';
+    } else {
+        emailError.textContent = '';
+    }
+});
 
-//       if (currentValue.length < 9){
-//         result += 'Password must be at least 8 characters. '
-//         result += '\n';
-//       } else {
-//         result += '';
-//       }
+phoneNumber.addEventListener("input", function (event) {
+    if (phoneNumber.validity.patternMismatch) {
+        phoneNumberError.textContent = '*Please enter in a 11 digit phone number that starts with 09';
+    } else {
+        phoneNumber.textContent = '';
+    }
+});
 
-//       passwordError.textContent = result;
+password.addEventListener("input", function (event) {
 
-//     } else {
-//       passwordError.textContent = '';
-//     }
-//   });
+
+      if (password.value === '') {
+        passwordError.textContent = '*Please enter a password.';
+      }
+      else if (password.validity.patternMismatch){
+        const currentValue = password.value;
+        const regExpCap = /[A-Z]/g;
+        const regExpDig = /[0-9]/g;
+        let result = '';
+        if (!regExpCap.test(currentValue)){
+          passwordError.textContent = '*Missing at least 1 capital letter.';
+        }
+        else if (!regExpDig.test(currentValue)){
+          passwordError.textContent = '*Missing at least 1 number. ';
+        }
+        else if (currentValue.length < 9){
+          passwordError.textContent = '*Password must be at least 8 characters. ';
+        }
+        else {
+          passwordError.textContent = '';
+        }
+      }
+      else {
+        passwordError.textContent = '';
+      }
+      // if (regExpCap.test(currentValue)){
+      //   result += '';
+      // } else {
+      //   result += `Missing at least 1 capital letter. `;
+      //   result += '\n';
+      // }
+
+      // if (regExpDig.test(currentValue)){
+      //   result += '';
+      // } else {
+      //   result += 'Missing at least 1 number. ';
+      //   result += '\n';
+      // }
+
+      // if (currentValue.length < 9){
+      //   result += 'Password must be at least 8 characters. '
+      //   result += '\n';
+      // } else {
+      //   result += '';
+      // }
+
+    //   passwordError.textContent = result;
+
+    // } else {
+    //   passwordError.textContent = '';
+    // }
+  });
 
   confirmPassword.addEventListener("input", function (event) {
     if (confirmPassword.value !== password.value) {

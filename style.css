@@ -77,6 +77,10 @@ h1 {
     margin-bottom: 10px;
 }
 
+/* input:invalid {
+    border-color: red;
+} */
+
 input:hover {
     border-color: #ccc;
 }
@@ -84,10 +88,6 @@ input:hover {
 input:focus {
     background: #fff;
 }
-
-/* input:invalid {
-    border-color: red;
-} */
 
 input:valid {
     border-color: green;
